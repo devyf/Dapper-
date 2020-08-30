@@ -51,9 +51,17 @@ namespace DapperOrmProject05
         {
             //准备存储过程的三个参数：两个是输入参数，一个是输出参数
             var param = new DynamicParameters();  //动态参数类
-            param.Add("@writeLevel", int.Parse(this.writeLev.Text)); //存储过程的输入参数赋值
-            param.Add("@labLevel", int.Parse(this.labLev.Text));
-            param.Add("@examNum", 0, DbType.Int32, ParameterDirection.Output); //标注为输出参数
+            try
+            {
+                param.Add("@writeLevel", int.Parse(this.writeLev.Text)); //存储过程的输入参数赋值
+                param.Add("@labLevel", int.Parse(this.labLev.Text));
+                param.Add("@examNum", 0, DbType.Int32, ParameterDirection.Output); //标注为输出参数
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+          
 
             using (IDbConnection db = new SqlConnection(DBHelper.ConnString))
             {
