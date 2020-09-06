@@ -157,7 +157,13 @@ select * from UserRole
 
 
 ----------接上，多表查询操作查询语句sql
+select u.*, r.* from UserInfo u
+inner join UserRole ur on ur.UserId = u.UserId
+inner join Role r on r.RoleId = ur.RoleId
 
+select u.UserId, u.UserName, u.PasswordHash, r.RoleId, r.RoleName from UserInfo u
+inner join UserRole ur on ur.UserId = u.UserId
+inner join Role r on r.RoleId = ur.RoleId
 
 
 
