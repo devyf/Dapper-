@@ -94,3 +94,76 @@ exec P_stuMarkInfo1 60, 60, @countNum output
 
 print '未通过考试的人数：' + convert(varchar(20), (@countNum)) 
 
+-----多表连接查询
+select * from stuinfo inner join stumark on stuinfo.stuNo = stumark.stuNo
+
+-----多表连接查询实例二
+if exists (select * from sysobjects where name='UserInfo')
+drop table UserInfo
+go
+
+Create Table UserInfo
+(
+	[UserId]   [int] IDENTITY(1, 1) PRIMARY KEY NOT NULL,
+	[Username] [nvarchar] (256) NOT NULL,
+	[PasswordHash] [nvarchar] (500) NULL,
+	[Email]  [nvarchar] (256) NULL,
+	[PhoneNumber] [nvarchar](30) NULL,
+	[IsFirstTimeLogin] [bit] DEFAULT(1) NOT NULL,
+	[AccessFailedCount]  [int] DEFAULT(0) NOT NULL,
+	[CreateDate]    [datetime] DEFAULT(GETDATE()) NOT NULL,
+	[IsActive]    [bit] DEFAULT(1) NOT NULL
+)
+
+insert into UserInfo(Username, PasswordHash, Email, PhoneNumber)
+values('Jack', '123456', 'Jack_Wang@igeekhome.com', '13542671841')
+
+insert into UserInfo(Username, PasswordHash, Email, PhoneNumber)
+values('Tom', '456123', 'Tom_Zhang@igeekhome.com', '13978674541')
+
+insert into UserInfo(Username, PasswordHash, Email, PhoneNumber)
+values('Hem', '852369', 'Hem_Zang@igeekhome.com', '13771976253')
+
+select * from UserInfo
+
+if exists (select * from sysobjects where name='Role')
+drop table [Role]
+go
+CREATE TABLE [Role]
+(
+	[RoleId]  [int] IDENTITY(1, 1) PRIMARY KEY NOT NULL,
+	[RoleName] [nvarchar](256) NOT NULL,
+)
+insert into [Role] values('学生')
+insert into [Role] values('教师')
+insert into [Role] values('工人')
+
+select * from [Role]
+
+if exists (select * from sysobjects where name='UserRole')
+drop table UserRole
+go
+CREATE TABLE UserRole
+(
+	[Id] [int] IDENTITY(1, 1) PRIMARY KEY NOT NULL,
+	[UserId] [int] FOREIGN KEY REFERENCES UserInfo ([UserId]) NOT NULL,
+	[RoleId] [int] FOREIGN KEY REFERENCES [Role] ([RoleId]) NOT NULL
+)
+insert into UserRole values(1,2)
+insert into UserRole values(2,1)
+insert into UserRole values(3,2)
+
+select * from UserRole
+
+
+----------接上，多表查询操作查询语句sql
+
+
+
+
+
+
+
+
+
+

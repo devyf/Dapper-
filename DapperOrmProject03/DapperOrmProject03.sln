@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperOrmProject05", "..\Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperOrmProject06", "..\DapperOrmProject06\DapperOrmProject06\DapperOrmProject06.csproj", "{0ED3494F-0A66-40BD-A837-03406B12C29C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperOrmProject07", "..\DapperOrmProject07\DapperOrmProject07\DapperOrmProject07.csproj", "{13BA9AC8-0B31-4A44-8DF9-4B444B0B8A40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperOrmProject08", "..\DapperOrmProject08\DapperOrmProject08\DapperOrmProject08.csproj", "{84237987-67B5-4C9F-806D-BD8C148A7A39}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{0ED3494F-0A66-40BD-A837-03406B12C29C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0ED3494F-0A66-40BD-A837-03406B12C29C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0ED3494F-0A66-40BD-A837-03406B12C29C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13BA9AC8-0B31-4A44-8DF9-4B444B0B8A40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13BA9AC8-0B31-4A44-8DF9-4B444B0B8A40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13BA9AC8-0B31-4A44-8DF9-4B444B0B8A40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13BA9AC8-0B31-4A44-8DF9-4B444B0B8A40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84237987-67B5-4C9F-806D-BD8C148A7A39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84237987-67B5-4C9F-806D-BD8C148A7A39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84237987-67B5-4C9F-806D-BD8C148A7A39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84237987-67B5-4C9F-806D-BD8C148A7A39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
